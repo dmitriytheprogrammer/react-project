@@ -1,14 +1,18 @@
-import React from 'react';
-import { Tables } from './components/Tables';
+import styled from "styled-components";
+import { useDataUni } from "./hooks/useDataUni";
+import { Navbar } from "./components/Navbar";
+import "./styles/index.css";
+import MainRouter from "./routes/MainRouter";
+import { Tables } from "./components/Tables";
 
 
-
-const App: React.FC = () => {
+export const App = () => {
   
-
   return (
-    <Tables />
+    <>
+      <Navbar/>
+      <MainRouter/>
+      <Tables/>
+    </>
   );
 };
-
-export default App;
