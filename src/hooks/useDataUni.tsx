@@ -3,13 +3,23 @@ import axios from 'axios';
 import { LIMIT_LIST_SCHOOL } from '../constants/config';
 import { DataType } from '../interfaces/DataType';
 import type { ColumnsType } from 'antd/es/table';
-
 export const useDataUni = () => {
     const [page, setPage] = useState<number>(1);
     const [dataSource, setDataSource] = useState<DataType[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
 
-    
+    const columns: ColumnsType<DataType> = [
+        {
+            title: 'Страна',
+            dataIndex: 'country',
+            key: 'country',
+        },
+        {
+            title: 'Название школы',
+            dataIndex: 'name',
+            key: 'name',
+        },
+    ];
 
     const getUniversity = async (page: number, limit: number) => {
         setLoading(true);  // Устанавливаем состояние загрузки в true
@@ -33,6 +43,7 @@ export const useDataUni = () => {
 
     return ({
         dataSource,
+        columns,
         loading,
         page,
         setPage
