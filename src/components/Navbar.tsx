@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
 import { ABOUT_ROUTE, CONTACTS_ROUTE, HOME_ROUTE, ORDER_ROUTE } from "../routes/configs";
 import { useAuth } from "../hooks/useAuth";
-
+import { useCurrentTheme } from "../hooks/useCurrentTheme";
 const Navigation = styled.nav`
     height: max-content;
     padding: 20px 0;
@@ -14,13 +14,24 @@ const Navigation = styled.nav`
 `
 
 const Button = styled.button`
-    width: 150px;
-    height: 50px;
-    border: 0;
-    border-radius: 10px;
-    font-size: 20px;
-    cursor: pointer;
-`
+  color: --text-color;
+  width: 150px;
+  height: 50px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+`;
+
+const ChangeThemeButton = styled.button`
+  color: --text-color;
+  width: 70px;
+  height: 50px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+`;
+
 
 export const Navbar = () => {
     const { isAuth, setIsAuth } = useAuth();
@@ -28,16 +39,17 @@ export const Navbar = () => {
     const handleLogin = () => {
         setIsAuth(!isAuth);
     }
-
+    const { changeTheme } = useCurrentTheme();
     return (
-            <header>
-                <Navigation>
-                    <NavLink className={'link'} to={HOME_ROUTE}>Home</NavLink>
-                    <NavLink className={'link'} to={ABOUT_ROUTE}>About</NavLink>
-                    <NavLink className={'link'} to={CONTACTS_ROUTE}>Contacts</NavLink>
-                    { isAuth && <NavLink className={'link'} to={ORDER_ROUTE}>Order</NavLink> }
-                    <Button onClick={handleLogin}>{!isAuth ? 'Войти' : 'Выйти'}</Button>
-                </Navigation>
-            </header>
+        <header>
+            <Navigation>
+                <NavLink className={'link'} to={HOME_ROUTE}>Home</NavLink>
+                <NavLink className={'link'} to={ABOUT_ROUTE}>About</NavLink>
+                <NavLink className={'link'} to={CONTACTS_ROUTE}>Contacts</NavLink>
+                {isAuth && <NavLink className={'link'} to={ORDER_ROUTE}>Order</NavLink>}
+                <Button onClick={handleLogin}>{!isAuth ? 'Войти' : 'Выйти'}</Button>
+                <ChangeThemeButton onClick={() => changeTheme()}>Change theme</ChangeThemeButton>
+        </Navigation>
+            </header >
     )
 }

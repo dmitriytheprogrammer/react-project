@@ -4,6 +4,7 @@ import type { ColumnsType } from 'antd/es/table';
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useState } from 'react';
 import { IMyForm } from '../interfaces/IMyForm';
+import styled from "styled-components";
 
 export const Forms = () => {
   const {
