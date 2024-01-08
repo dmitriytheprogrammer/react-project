@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar";
 import "./styles/index.css";
 import MainRouter from "./routes/MainRouter";
 import { Tables } from "./components/Tables";
+import { Forms } from "./components/Forms";
 
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
       <Navbar/>
       <MainRouter/>
       <Tables/>
+      <Forms/>
     </>
   );
 };
