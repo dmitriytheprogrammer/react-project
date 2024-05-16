@@ -1,4 +1,4 @@
 export interface IUniversityData {
-	name: string
-	country: string
+  name: string;
+  country: string;
 }

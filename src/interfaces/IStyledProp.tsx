@@ -1,3 +1,3 @@
 export interface StyledProp {
-    displayFlex?: string
+  displayFlex?: string;
 }
