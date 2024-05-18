@@ -8,7 +8,7 @@ export const App = () => {
 
   return (
     <>
-    <GlobalStyles />
+      <GlobalStyles/>
       <Navbar />
       <MainRouter />
       <Tables />
