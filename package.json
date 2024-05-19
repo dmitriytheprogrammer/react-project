@@ -49,9 +49,7 @@
     "test": "vitest",
     "test-coverage": "vitest --coverage",
     "test-ui": "vitest --ui",
-    "prettify": "prettier --write './src/**/*.{js,json,jsx,ts,tsx,css}'",
-    "build": "tsc && vite build",
-    "preview": "vite preview --host"
+    "prettify": "prettier --write './src/**/*.{js,json,jsx,ts,tsx,css}'"
   },
   "lint-staged": {
     "./src/*/.{js,json,jsx,ts,tsx,css}": [
