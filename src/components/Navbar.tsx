@@ -18,6 +18,11 @@ const Navigation = styled.nav`
   justify-content: space-around;
   font-size: 20px;
   text-align: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    justify-items: center;
+  }
 `;
 
 const Button = styled.button`
