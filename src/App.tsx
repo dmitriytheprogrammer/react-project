@@ -5,10 +5,9 @@ import { Tables } from "./components/Tables";
 import { Forms } from "./components/Forms";
 import { GlobalStyles } from "./GlobalStyles";
 export const App = () => {
-
   return (
     <>
-      <GlobalStyles/>
+      <GlobalStyles />
       <Navbar />
       <MainRouter />
       <Tables />

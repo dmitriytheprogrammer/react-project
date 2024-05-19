@@ -1,5 +1,5 @@
 export interface IMyForm {
-    name: string;
-    age: number;
-    country: string;
+  name: string;
+  age: number;
+  country: string;
 }
