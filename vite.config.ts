@@ -13,10 +13,12 @@ export default defineConfig({
                 short_name: 'Web App',
                 description: 'Amazing React Application',
                 theme_color: '#000',
+                display: 'fullscreen',
                 start_url: '/',
+                prefer_related_applications: true,
                 icons: [
                     {
-                        src: 'logo_192.png',
+                        src: 'logo192.png',
                         sizes: '192x192',
                         type: 'image/png'
                     },
@@ -34,5 +36,11 @@ export default defineConfig({
                 ]
             }
         })
-    ]
+    ],
+    test: {
+        css: true,
+        environment: 'jsdom',
+        globals: true,
+        setupFiles: 'src/tests/main.tsx'
+    }
 })

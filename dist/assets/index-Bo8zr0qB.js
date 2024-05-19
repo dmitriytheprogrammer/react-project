@@ -72,6 +72,11 @@ Error generating stack: `+a.message+`
   justify-content: space-around;
   font-size: 20px;
   text-align: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    justify-items: center;
+  }
 `,bte=fp.button`
   color: --text-color;
   width: 150px;
